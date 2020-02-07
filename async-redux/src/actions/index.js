@@ -16,6 +16,7 @@ export const fetchPokemon = () => dispatch => {
             .then(res => {
                 console.log(res);
                 dispatch({ type: UPDATE_POKEMON, payload: res.data });
+
             })
             .catch(err => {
                 console.error(`error fetching pokemon from API! err: ${err}`);
