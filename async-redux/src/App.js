@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.scss';
 
-import PokemonForm from './components/PokemonForm';
-import Pokemon from './components/Pokemon';
+// Components:
+import StrainForm from './components/StrainForm';
+import StrainsList from './components/StrainsList';
 
 function App() {
   return (
     <div className="App">
       <h1>App!</h1>
-      <PokemonForm />
-      <Pokemon />
+      <StrainForm />
+      <StrainsList />
     </div>
   );
 }

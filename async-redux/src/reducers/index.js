@@ -1,30 +1,36 @@
-import { FETCH_POKEMON, UPDATE_POKEMON, SET_ERROR } from '../actions';
+import { FETCH_STRAINS, UPDATE_STRAINS, SET_ERROR } from '../actions';
 
 const initialState = {
-    pokemon: [],
-    fetchingPokemon: false,
+    strainData: [],
+    fetchingStrainData: false,
     error: ''
 };
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_POKEMON:
+
+        case FETCH_STRAINS:
+            return {
+              ...state,
+              fetchingStrainData: true,
+              strainData: [],
+            };
+
+        case UPDATE_STRAINS:
             return {
                 ...state,
-                fetchingPokemon: true
+                strainData: action.payload,
+                fetchingStrainData: false
             };
-        case UPDATE_POKEMON:
-            return {
-                ...state,
-                pokemon: action.payload,
-                fetchingPokemon: false
-            };
-        case SET_ERROR:
-            return {
-                ...state,
-                fetchingPokemon: false,
-                error: action.payload
-            };
+
+            case SET_ERROR:
+                return {
+                  ...state,
+                  fetchingStrainData: false,
+                  error: action.payload
+                };
+
+
         default:
             return state;
     }
