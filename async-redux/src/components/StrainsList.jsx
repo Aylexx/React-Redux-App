@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchStrains } from "../actions";
 
-// import Strain from './Strain';
+import Strain from './Strain';
 
 const StrainsList = ({ error, strainData }) => {
-  // const [namedStrainArray, setNamedStrainArray] = useState();
 
   useEffect(() => {
     fetchStrains();
@@ -18,7 +17,7 @@ const StrainsList = ({ error, strainData }) => {
       ) : (
         <div className='StrainsList'>
           <h1>StrainsList Component!</h1>
-          {/* {strains.map(strain => <Strain strain={strain} />)} */}
+          {strainData.map(strain => <Strain strain={strain} />)}
         </div>
       )}
     </>
